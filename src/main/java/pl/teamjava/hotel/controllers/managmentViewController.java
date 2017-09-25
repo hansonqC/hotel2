@@ -1,4 +1,4 @@
 package pl.teamjava.hotel.controllers;
 
-public class Controller {
+public class managmentViewController {
 }
