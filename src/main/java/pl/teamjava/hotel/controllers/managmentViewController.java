@@ -1,4 +1,12 @@
 package pl.teamjava.hotel.controllers;
 
-public class managmentViewController {
+import javafx.fxml.Initializable;
+
+import java.net.URL;
+import java.util.ResourceBundle;
+
+public class managmentViewController implements Initializable {
+    public void initialize(URL location, ResourceBundle resources) {
+
+    }
 }

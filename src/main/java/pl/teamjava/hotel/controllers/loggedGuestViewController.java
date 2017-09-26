@@ -1,4 +1,12 @@
 package pl.teamjava.hotel.controllers;
 
-public class loggedGuestViewController {
+import javafx.fxml.Initializable;
+
+import java.net.URL;
+import java.util.ResourceBundle;
+
+public class loggedGuestViewController implements Initializable {
+    public void initialize(URL location, ResourceBundle resources) {
+
+    }
 }
