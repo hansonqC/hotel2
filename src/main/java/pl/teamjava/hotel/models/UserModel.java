@@ -13,5 +13,6 @@ public class UserModel {
         this.username = username;
         this.email = email;
         this.phoneNumber = phoneNumber;
+        
     }
 }
