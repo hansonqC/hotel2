@@ -6,6 +6,4 @@ public class UserModel {
     private String username;
     private String email;
     private String phoneNumber;
-
-    private boolean isAccessCodeEntered; // rozróżnia zwykłego gościa od landlorda (Paweł)
 }
