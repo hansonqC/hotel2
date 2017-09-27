@@ -1,5 +1,8 @@
 package pl.teamjava.hotel.models.dao;
 
+import pl.teamjava.hotel.models.ManagmentModel;
+
 public interface UserDao {
+    boolean addUser(ManagmentModel model);
 
 }

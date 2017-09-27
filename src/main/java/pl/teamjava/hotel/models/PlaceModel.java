@@ -6,7 +6,6 @@ public class PlaceModel {
     private String region;
     private String accessCode;
     private String kindOfPlace;
-
     private boolean isThereWiFi;
     private boolean isThereSwimmingPool;
     private boolean isThereSpa;
