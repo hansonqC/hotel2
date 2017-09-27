@@ -5,20 +5,14 @@ public class PlaceModel {
     private String city;
     private String region;
     private String accessCode;
-    private String kindOfPlace;
-    private boolean isThereWiFi;
-    private boolean isThereSwimmingPool;
-    private boolean isThereSpa;
+    private String category;
 
-    public PlaceModel(String name, String city, String region, String accessCode, String kindOfPlace, boolean isThereWiFi, boolean isThereSwimmingPool, boolean isThereSpa) {
+    public PlaceModel(String name, String city, String region, String accessCode, String category) {
         this.name = name;
         this.city = city;
         this.region = region;
         this.accessCode = accessCode;
-        this.kindOfPlace = kindOfPlace;
-        this.isThereWiFi = isThereWiFi;
-        this.isThereSwimmingPool = isThereSwimmingPool;
-        this.isThereSpa = isThereSpa;
+        this.category = category;
     }
 
     public String getName() {
@@ -49,31 +43,10 @@ public class PlaceModel {
         this.accessCode = accessCode;
     }
 
-    public String getKindOfPlace() {
-        return kindOfPlace;
+    public String getCategory() {
+        return category;
     }
-    public void setKindOfPlace(String kindOfPlace) {
-        this.kindOfPlace = kindOfPlace;
-    }
-
-    public boolean isThereWiFi() {
-        return isThereWiFi;
-    }
-    public void setThereWiFi(boolean thereWiFi) {
-        isThereWiFi = thereWiFi;
-    }
-
-    public boolean isThereSwimmingPool() {
-        return isThereSwimmingPool;
-    }
-    public void setThereSwimmingPool(boolean thereSwimmingPool) {
-        isThereSwimmingPool = thereSwimmingPool;
-    }
-
-    public boolean isThereSpa() {
-        return isThereSpa;
-    }
-    public void setThereSpa(boolean thereSpa) {
-        isThereSpa = thereSpa;
+    public void setCategory(String category) {
+        this.category = category;
     }
 }
