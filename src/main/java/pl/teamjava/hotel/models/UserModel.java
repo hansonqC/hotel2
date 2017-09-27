@@ -6,15 +6,15 @@ public class UserModel {
     private String username;
     private String email;
     private String phoneNumber;
+    private boolean isBlocked;
 
-
-    public UserModel(String name, String lastname, String username, String email, String phoneNumber) {
+    public UserModel(String name, String lastname, String username, String email, String phoneNumber, boolean isBlocked) {
         this.name = name;
         this.lastname = lastname;
         this.username = username;
         this.email = email;
         this.phoneNumber = phoneNumber;
-        
+        this.isBlocked = isBlocked;
     }
 
     public String getName() {
@@ -50,5 +50,12 @@ public class UserModel {
     }
     public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
+    }
+
+    public boolean isBlocked() {
+        return isBlocked;
+    }
+    public void setBlocked(boolean blocked) {
+        isBlocked = blocked;
     }
 }
