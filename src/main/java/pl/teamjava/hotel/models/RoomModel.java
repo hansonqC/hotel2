@@ -3,16 +3,15 @@ package pl.teamjava.hotel.models;
 public class RoomModel {
     private String name;
     private String kindOfRoom;
-    private int amountOfPeopleIn;
+    private int capacity;
     private String placeName; // (powiązanie do hotelu/domku/pola (Paweł)
     private double price;
     private boolean isBooked;
 
-
-    public RoomModel(String name, String kindOfRoom, int amountOfPeopleIn, String placeName, double price, boolean isBooked) {
+    public RoomModel(String name, String kindOfRoom, int capacity, String placeName, double price, boolean isBooked) {
         this.name = name;
         this.kindOfRoom = kindOfRoom;
-        this.amountOfPeopleIn = amountOfPeopleIn;
+        this.capacity = capacity;
         this.placeName = placeName;
         this.price = price;
         this.isBooked = isBooked;
@@ -28,15 +27,15 @@ public class RoomModel {
     public String getKindOfRoom() {
         return kindOfRoom;
     }
-    public void setKindOfRoom(String kinfOfRoom) {
-        this.kindOfRoom = kinfOfRoom;
+    public void setKindOfRoom(String kindOfRoom) {
+        this.kindOfRoom = kindOfRoom;
     }
 
-    public int getAmountOfPeopleIn() {
-        return amountOfPeopleIn;
+    public int getCapacity() {
+        return capacity;
     }
-    public void setAmountOfPeopleIn(int amountOfPeopleIn) {
-        this.amountOfPeopleIn = amountOfPeopleIn;
+    public void setCapacity(int capacity) {
+        this.capacity = capacity;
     }
 
     public String getPlaceName() {
