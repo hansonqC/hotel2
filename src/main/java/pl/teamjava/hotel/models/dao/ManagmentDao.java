@@ -1,18 +1,21 @@
 package pl.teamjava.hotel.models.dao;
 
+import pl.teamjava.hotel.models.PlaceModel;
 import pl.teamjava.hotel.models.RoomModel;
 import pl.teamjava.hotel.models.UserModel;
 
 import java.util.List;
+import java.util.Map;
 
 public interface ManagmentDao {
     List<String> showProperties(String accessCode);
     boolean addRoom (RoomModel model);
     boolean deleteRoom (String name);
-    boolean editRoom (RoomModel model);
-    boolean addProperty (String accessCode);
+    boolean editRoom (RoomModel model, int id);
+    boolean addProperty (PlaceModel model);
     boolean deleteProperty (String name);
-    boolean addToBlockedList (UserModel userModel);
-    List<UserModel> showBlockedList (String accessCode);
-    boolean isRoomBooked (String name, String nameOfProperty);
+    boolean addToBlockedList (String email);
+    List<String> showBlockedList ();
+    Map<String, Double> bookedRooms (boolean isBooked, String category);
+    List<String> userList();
 }

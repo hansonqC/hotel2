@@ -79,7 +79,7 @@ public class PlaceModel {
         isThereSpa = thereSpa;
     }
 
-    public boolean isCanIHaveAPet() {
+    public boolean canIHaveAPet() {
         return canIHaveAPet;
     }
     public void setCanIHaveAPet(boolean canIHaveAPet) {

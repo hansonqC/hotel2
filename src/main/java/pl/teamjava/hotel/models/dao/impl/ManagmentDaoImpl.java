@@ -1,19 +1,23 @@
 package pl.teamjava.hotel.models.dao.impl;
 
 import pl.teamjava.hotel.models.MySqlConnector;
+import pl.teamjava.hotel.models.PlaceModel;
 import pl.teamjava.hotel.models.RoomModel;
-import pl.teamjava.hotel.models.UserModel;
+import pl.teamjava.hotel.models.Session;
 import pl.teamjava.hotel.models.dao.ManagmentDao;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.LinkedHashMap;
 import java.util.List;
+import java.util.Map;
 
 public class ManagmentDaoImpl implements ManagmentDao {
 
     MySqlConnector connector = MySqlConnector.getInstance();
+    Session session = Session.getInstance();
 
     public List<String> showProperties(String accessCode) {
 
@@ -21,7 +25,7 @@ public class ManagmentDaoImpl implements ManagmentDao {
 
         try {
             PreparedStatement statement = connector.getConnection().prepareStatement(
-                    "SELECT name FROM place WHERE accessCode = ?"
+                    "SELECT name FROM place WHERE user_access = ?"
             );
 
             statement.setString(1, accessCode);
@@ -36,7 +40,6 @@ public class ManagmentDaoImpl implements ManagmentDao {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-
         return null;
     }
 
@@ -44,8 +47,21 @@ public class ManagmentDaoImpl implements ManagmentDao {
 
         try {
             PreparedStatement statement = connector.getConnection().prepareStatement(
-                    "INSERT INTO room VALUES(?,?,?,?,?) "
+                    "INSERT INTO room VALUES(?,?,?,?,?,?,?,?)"
             );
+
+            statement.setInt(1, 0);
+            statement.setString(2, model.getName());
+            statement.setString(3, model.getKindOfRoom());
+            statement.setInt(4, model.getCapacity());
+            statement.setString(5, model.getPlaceName());
+            statement.setDouble(6, model.getPrice());
+            statement.setBoolean(7, false);
+            statement.setString(8, session.getAccessCode());
+            statement.execute();
+            statement.close();
+
+            return true;
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -62,6 +78,31 @@ public class ManagmentDaoImpl implements ManagmentDao {
             statement.setString(1, name);
             statement.execute();
             statement.close();
+
+            return true;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return false;
+    }
+
+    public boolean editRoom(RoomModel model, int id) {
+
+        try {
+            PreparedStatement statement = connector.getConnection().prepareStatement(
+                    "UPDATE room SET name = ?, kindOfRoom = ?, capacity = ?," +
+                            " placeName = ?, price = ?, isBooked = ? WHERE name = ?"
+            );
+
+            statement.setString(1, model.getName());
+            statement.setString(2, model.getKindOfRoom());
+            statement.setInt(3, model.getCapacity());
+            statement.setString(4, model.getPlaceName());
+            statement.setDouble(5, model.getPrice());
+            statement.setInt(6, id);
+            statement.execute();
+            statement.close();
+
             return true;
 
         } catch (SQLException e) {
@@ -70,23 +111,26 @@ public class ManagmentDaoImpl implements ManagmentDao {
         return false;
     }
 
-    public boolean editRoom(RoomModel model) {
-
+    public boolean addProperty(PlaceModel model) {
         try {
             PreparedStatement statement = connector.getConnection().prepareStatement(
-                    "UPDATE room SET "
+                    "INSERT INTO place VALUES (?,?,?,?,?,?,?,?,?,?)"
             );
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-        return false;
-    }
 
-    public boolean addProperty(String accessCode) {
-        try {
-            PreparedStatement statement = connector.getConnection().prepareStatement(
-                    ""
-            );
+            statement.setInt(1, 0);
+            statement.setString(2, model.getName());
+            statement.setString(3, model.getCity());
+            statement.setString(4, model.getRegion());
+            statement.setString(5, model.getCategory());
+            statement.setBoolean(6, model.isThereWiFi());
+            statement.setBoolean(7, model.canIHaveAPet());
+            statement.setBoolean(8, model.isThereSwimmingPool());
+            statement.setBoolean(9, model.isThereSpa());
+            statement.setString(10, session.getAccessCode());
+            statement.execute();
+            statement.close();
+
+            return true;
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -96,50 +140,106 @@ public class ManagmentDaoImpl implements ManagmentDao {
     public boolean deleteProperty(String name) {
         try {
             PreparedStatement statement = connector.getConnection().prepareStatement(
-                    ""
+                    "DELETE FROM place WHERE name = ?"
             );
+
+            statement.setString(1, name);
+            statement.execute();
+            statement.close();
+
+            return true;
         } catch (SQLException e) {
             e.printStackTrace();
         }
         return false;
     }
 
-    public boolean addToBlockedList(UserModel userModel) {
+    public boolean addToBlockedList(String email) {
         try {
             PreparedStatement statement = connector.getConnection().prepareStatement(
-                    ""
+                    "UPDATE user SET isBlocked = ? WHERE email = ?"
             );
+
+            statement.setBoolean(1, true);
+            statement.setString(2, email);
+            statement.execute();
+            statement.close();
+
+            return true;
         } catch (SQLException e) {
             e.printStackTrace();
         }
         return false;
     }
 
-    public List<UserModel> showBlockedList(String accessCode) {
+    public List<String> showBlockedList() {
 
-        List<UserModel> blockedList = new ArrayList<UserModel>();
+        List<String> blockedList = new ArrayList<String>();
 
         try {
             PreparedStatement statement = connector.getConnection().prepareStatement(
-                    ""
+                    "SELECT name FROM user WHERE isBlocked = 1"
             );
+
+            ResultSet set = statement.executeQuery();
+
+            while (set.next()){
+                blockedList.add(set.toString());
+            }
+
+            statement.close();
+            return blockedList;
         } catch (SQLException e) {
             e.printStackTrace();
         }
-
-        return blockedList;
+        return null;
     }
 
-    public boolean isRoomBooked(String name, String nameOfProperty) {
+    public Map<String, Double> bookedRooms(boolean isBooked, String category) {
+
+        Map<String, Double> mapOfRooms = new LinkedHashMap<String, Double>();
 
         try {
             PreparedStatement statement = connector.getConnection().prepareStatement(
-                    ""
+                    "SELECT room.name, room.price FROM room INNER JOIN place ON place.id = room.hotel_id" +
+                            " WHERE room.isBooked = ?, hotel.category = ?"
             );
+
+            statement.setBoolean(1, isBooked);
+            statement.setString(2, category);
+            ResultSet set = statement.executeQuery();
+
+            while (set.next()){
+                mapOfRooms.put(set.getString("name"), set.getDouble("price"));
+            }
+            statement.close();
+
+            return mapOfRooms;
         } catch (SQLException e) {
             e.printStackTrace();
         }
+        return null;
+    }
 
-        return false;
+    public List<String> userList() {
+
+        List<String> userList = new ArrayList<String>();
+
+        try {
+            PreparedStatement statement = connector.getConnection().prepareStatement(
+                    "SELECT name FROM user"
+            );
+
+            ResultSet set = statement.executeQuery();
+            while (set.next()){
+                userList.add(set.toString());
+            }
+            statement.close();
+
+            return userList;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
     }
 }

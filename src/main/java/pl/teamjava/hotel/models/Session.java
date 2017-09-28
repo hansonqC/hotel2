@@ -13,6 +13,15 @@ public class Session {
     private int id;
     private String username;
     private boolean isLogedIn;
+    private String accessCode;
+
+    public String getAccessCode() {
+        return accessCode;
+    }
+
+    public void setAccessCode(String accessCode) {
+        this.accessCode = accessCode;
+    }
 
     public int getId() {
         return id;
