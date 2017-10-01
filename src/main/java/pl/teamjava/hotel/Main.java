@@ -12,9 +12,9 @@ public class Main extends Application {
     private static String version;
     @Override
     public void start(Stage primaryStage) throws Exception{
-        Circle cir = new Circle();
 
-        Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("loginView.fxml"));
+
+        Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("mainView.fxml"));
         primaryStage.setTitle("Hotel ver: "+version);
         primaryStage.initStyle(StageStyle.UTILITY);
         primaryStage.setScene(new Scene(root, 600, 420));
