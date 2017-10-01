@@ -5,14 +5,16 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
 public class Main extends Application {
-
+    private static String version;
     @Override
     public void start(Stage primaryStage) throws Exception{
-        Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("guestView.fxml"));
-        primaryStage.setTitle("Hello World");
-        primaryStage.setScene(new Scene(root, 600, 400));
+        Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("loginView.fxml"));
+        primaryStage.setTitle("Hotel ver: "+version);
+        primaryStage.initStyle(StageStyle.UTILITY);
+        primaryStage.setScene(new Scene(root, 600, 420));
         primaryStage.show();
     }
 
