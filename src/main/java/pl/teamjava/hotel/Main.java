@@ -17,7 +17,7 @@ public class Main extends Application {
         Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("mainView.fxml"));
         primaryStage.setTitle("Hotel ver: "+version);
         primaryStage.initStyle(StageStyle.UTILITY);
-        primaryStage.setScene(new Scene(root, 600, 420));
+        primaryStage.setScene(new Scene(root, 600, 430));
         primaryStage.show();
     }
 

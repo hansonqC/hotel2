@@ -11,9 +11,9 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane minHeight="400.0" minWidth="600.0" prefHeight="420.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pl.teamjava.hotel.controllers.loginViewController">
+<AnchorPane minHeight="420.0" minWidth="600.0" prefHeight="420.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pl.teamjava.hotel.controllers.loginViewController">
    <children>
-      <ImageView fitHeight="420.0" fitWidth="600.0" pickOnBounds="true">
+      <ImageView fitHeight="420.0" fitWidth="600.0" opacity="0.84" pickOnBounds="true">
          <image>
             <Image url="@images/index.jpg" />
          </image>
@@ -52,15 +52,15 @@
             <Font size="14.0" />
          </font>
       </Button>
-      <Button fx:id="buttonMainPage" layoutX="402.0" layoutY="342.0" mnemonicParsing="false" opacity="0.6" prefHeight="16.0" prefWidth="176.0" text="Strona główna">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </Button>
       <Label layoutX="165.0" layoutY="337.0" text="|">
          <font>
             <Font size="14.0" />
          </font>
       </Label>
+      <Button fx:id="buttonMainPage" layoutX="450.0" layoutY="10.0" mnemonicParsing="false" opacity="0.6" prefHeight="40.0" prefWidth="140.0" text="Strona główna">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>
