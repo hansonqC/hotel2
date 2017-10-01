@@ -78,6 +78,7 @@ public class guestViewController implements Initializable {
     }
 
     //elo
+    // no siema :D
 
     private void showInfo(String newValue) {
     }
