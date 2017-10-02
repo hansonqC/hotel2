@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane minHeight="420.0" minWidth="600.0" prefHeight="420.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pl.teamjava.hotel.controllers.addPropertyController">
+    <children>
+        <ImageView fitHeight="420.0" fitWidth="600.0" opacity="0.84" pickOnBounds="true">
+            <image>
+                <Image url="@images/managment.jpg" />
+            </image>
+        </ImageView>
+        <Label fx:id="labelManagment" layoutX="246.0" layoutY="14.0" text="Dodaj własność" textFill="#4d0000">
+            <font>
+                <Font name="Times New Roman Bold" size="14.0" />
+            </font>
+            <effect>
+                <Reflection />
+            </effect>
+        </Label>
+        <Label fx:id="labelJavaTeam" layoutX="53.0" layoutY="14.0" text="by JavaTeam" textFill="#7c7c7c">
+            <font>
+                <Font name="Times New Roman Bold" size="14.0" />
+            </font>
+            <effect>
+                <Reflection />
+            </effect>
+        </Label>
+        <Button fx:id="buttonLogout" blendMode="COLOR_BURN" layoutX="450.0" layoutY="10.0" mnemonicParsing="false" opacity="0.6" prefHeight="40.0" prefWidth="140.0" text="Wyloguj">
+            <font>
+                <Font size="18.0" />
+            </font>
+        </Button>
+        <Button fx:id="buttonBack" blendMode="COLOR_BURN" layoutX="27.0" layoutY="379.0" mnemonicParsing="false" text="Wróć" />
+      <TextField fx:id="textName" layoutX="190.0" layoutY="81.0" prefHeight="25.0" prefWidth="245.0" promptText="Nazwa hotelu" />
+      <TextField fx:id="textCity" layoutX="190.0" layoutY="117.0" prefHeight="25.0" prefWidth="245.0" promptText="Miejscowość" />
+      <TextField fx:id="textRegion" layoutX="190.0" layoutY="159.0" prefHeight="25.0" prefWidth="245.0" promptText="Region" />
+      <Button fx:id="buttonAdd" layoutX="240.0" layoutY="367.0" mnemonicParsing="false" text="Dodaj własność" />
+      <SplitMenuButton fx:id="splitCategory" layoutX="190.0" layoutY="198.0" mnemonicParsing="false" text="Wybierz kategorię">
+        <items>
+          <MenuItem mnemonicParsing="false" text="Action 1" />
+          <MenuItem mnemonicParsing="false" text="Action 2" />
+        </items>
+      </SplitMenuButton>
+      <CheckBox fx:id="checkboxWifi" layoutX="190.0" layoutY="241.0" mnemonicParsing="false" text="Wi-Fi" />
+      <CheckBox fx:id="checkboxPets" layoutX="190.0" layoutY="272.0" mnemonicParsing="false" text="Zwierzęta" />
+      <CheckBox fx:id="checkboxPool" layoutX="190.0" layoutY="302.0" mnemonicParsing="false" text="Basen" />
+      <CheckBox fx:id="checkboxSpa" layoutX="190.0" layoutY="327.0" mnemonicParsing="false" text="SPA" />
+    </children>
+</AnchorPane>

@@ -1,14 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="pl.teamjava.hotel.controllers.managmentViewController"
-            prefHeight="400.0" prefWidth="600.0">
-
+<AnchorPane minHeight="420.0" minWidth="600.0" prefHeight="420.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pl.teamjava.hotel.controllers.managmentViewController">
+    <children>
+        <ImageView fitHeight="420.0" fitWidth="600.0" opacity="0.84" pickOnBounds="true">
+            <image>
+                <Image url="@images/index.jpg" />
+            </image>
+        </ImageView>
+        <Label fx:id="labelManagment" layoutX="215.0" layoutY="22.0" text="Konto administracyjne" textFill="WHITE">
+            <font>
+                <Font name="Times New Roman Bold" size="14.0" />
+            </font>
+            <effect>
+                <Reflection />
+            </effect>
+        </Label>
+        <Label fx:id="labelJavaTeam" layoutX="53.0" layoutY="14.0" text="by JavaTeam" textFill="WHITE">
+            <font>
+                <Font name="Times New Roman Bold" size="14.0" />
+            </font>
+            <effect>
+                <Reflection />
+            </effect>
+        </Label>
+        <Button fx:id="buttonMainPage" blendMode="COLOR_BURN" layoutX="450.0" layoutY="10.0" mnemonicParsing="false" opacity="0.6" prefHeight="40.0" prefWidth="140.0" text="Wyloguj">
+            <font>
+                <Font size="18.0" />
+            </font>
+        </Button>
+      <Button fx:id="buttonProperty" layoutX="215.0" layoutY="149.0" mnemonicParsing="false" text="Zarządzaj własnościami" />
+      <Button fx:id="buttonRoom" layoutX="215.0" layoutY="186.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="140.0" text="Zarządzaj pokojami" />
+      <Button fx:id="buttonReservation" layoutX="215.0" layoutY="223.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="140.0" text="Rezerwacje" />
+      <Button fx:id="buttonBlockedList" layoutX="215.0" layoutY="261.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="140.0" text="Lista zablokowanych" />
+      <Button fx:id="buttonEdit" blendMode="COLOR_BURN" layoutX="27.0" layoutY="379.0" mnemonicParsing="false" text="Edytuj dane użytkownika" />
+    </children>
 </AnchorPane>

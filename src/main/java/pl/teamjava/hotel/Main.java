@@ -14,7 +14,7 @@ public class Main extends Application {
     public void start(Stage primaryStage) throws Exception{
 
 
-        Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("mainView.fxml"));
+        Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("loginView.fxml"));
         primaryStage.setTitle("Hotel ver: "+version);
         primaryStage.initStyle(StageStyle.UTILITY);
         primaryStage.setScene(new Scene(root, 600, 430));

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane minHeight="420.0" minWidth="600.0" prefHeight="420.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pl.teamjava.hotel.controllers.deleteRoomController">
+    <children>
+        <ImageView fitHeight="420.0" fitWidth="600.0" opacity="0.84" pickOnBounds="true">
+            <image>
+                <Image url="@images/managment.jpg" />
+            </image>
+        </ImageView>
+        <Label fx:id="labelManagment" layoutX="256.0" layoutY="14.0" text="Usuń pokój" textFill="#4d0000">
+            <font>
+                <Font name="Times New Roman Bold" size="14.0" />
+            </font>
+            <effect>
+                <Reflection />
+            </effect>
+        </Label>
+        <Label fx:id="labelJavaTeam" layoutX="53.0" layoutY="14.0" text="by JavaTeam" textFill="#7c7c7c">
+            <font>
+                <Font name="Times New Roman Bold" size="14.0" />
+            </font>
+            <effect>
+                <Reflection />
+            </effect>
+        </Label>
+        <Button fx:id="buttonLogout" blendMode="COLOR_BURN" layoutX="450.0" layoutY="10.0" mnemonicParsing="false" opacity="0.6" prefHeight="40.0" prefWidth="140.0" text="Wyloguj">
+            <font>
+                <Font size="18.0" />
+            </font>
+        </Button>
+        <Button fx:id="buttonBack" blendMode="COLOR_BURN" layoutX="27.0" layoutY="379.0" mnemonicParsing="false" text="Wróć" />
+        <ListView fx:id="listProperty" layoutX="27.0" layoutY="50.0" opacity="0.6" prefHeight="310.0" prefWidth="200.0" />
+        <SplitMenuButton fx:id="splitName" layoutX="248.0" layoutY="50.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="176.0" text="Wybierz nazwę własności">
+            <items>
+                <MenuItem mnemonicParsing="false" text="Action 1" />
+                <MenuItem mnemonicParsing="false" text="Action 2" />
+            </items>
+        </SplitMenuButton>
+        <SplitMenuButton fx:id="splitCity" layoutX="248.0" layoutY="90.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="176.0" text="Wybierz miejscowość">
+            <items>
+                <MenuItem mnemonicParsing="false" text="Action 1" />
+                <MenuItem mnemonicParsing="false" text="Action 2" />
+            </items>
+        </SplitMenuButton>
+        <Button fx:id="buttonDelete" layoutX="248.0" layoutY="335.0" mnemonicParsing="false" text="Usuń" />
+        <ScrollBar fx:id="scrollProperty" layoutX="213.0" layoutY="50.0" orientation="VERTICAL" prefHeight="310.0" prefWidth="14.0" />
+    </children>
+</AnchorPane>

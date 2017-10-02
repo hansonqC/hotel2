@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane minHeight="420.0" minWidth="600.0" prefHeight="420.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pl.teamjava.hotel.controllers.addRoomController">
+    <children>
+        <ImageView fitHeight="420.0" fitWidth="600.0" opacity="0.84" pickOnBounds="true">
+            <image>
+                <Image url="@images/managment.jpg" />
+            </image>
+        </ImageView>
+        <Label fx:id="labelManagment" layoutX="255.0" layoutY="14.0" text="Dodaj pokój" textFill="#4d0000">
+            <font>
+                <Font name="Times New Roman Bold" size="14.0" />
+            </font>
+            <effect>
+                <Reflection />
+            </effect>
+        </Label>
+        <Label fx:id="labelJavaTeam" layoutX="53.0" layoutY="14.0" text="by JavaTeam" textFill="#7c7c7c">
+            <font>
+                <Font name="Times New Roman Bold" size="14.0" />
+            </font>
+            <effect>
+                <Reflection />
+            </effect>
+        </Label>
+        <Button fx:id="buttonLogout" blendMode="COLOR_BURN" layoutX="450.0" layoutY="10.0" mnemonicParsing="false" opacity="0.6" prefHeight="40.0" prefWidth="140.0" text="Wyloguj">
+            <font>
+                <Font size="18.0" />
+            </font>
+        </Button>
+        <Button fx:id="buttonBack" blendMode="COLOR_BURN" layoutX="27.0" layoutY="379.0" mnemonicParsing="false" text="Wróć" />
+      <TextField fx:id="textName" layoutX="218.0" layoutY="91.0" prefHeight="25.0" prefWidth="149.0" promptText="Nazwa" />
+      <SplitMenuButton fx:id="splitCategory" layoutX="218.0" layoutY="127.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="149.0" text="Kategoria">
+        <items>
+          <MenuItem mnemonicParsing="false" text="Action 1" />
+          <MenuItem mnemonicParsing="false" text="Action 2" />
+        </items>
+      </SplitMenuButton>
+      <SplitMenuButton fx:id="splitCapacity" layoutX="218.0" layoutY="166.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="149.0" text="Ilość miejsc">
+        <items>
+          <MenuItem mnemonicParsing="false" text="Action 1" />
+          <MenuItem mnemonicParsing="false" text="Action 2" />
+        </items>
+      </SplitMenuButton>
+      <SplitMenuButton fx:id="splitPlaceName" layoutX="218.0" layoutY="210.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="149.0" text="Nazwa własności">
+        <items>
+          <MenuItem mnemonicParsing="false" text="Action 1" />
+          <MenuItem mnemonicParsing="false" text="Action 2" />
+        </items>
+      </SplitMenuButton>
+      <TextField fx:id="textPrice" layoutX="218.0" layoutY="251.0" promptText="Cena" />
+      <Button fx:id="buttonAdd" layoutX="319.0" layoutY="301.0" mnemonicParsing="false" text="Dodaj" />
+    </children>
+</AnchorPane>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane minHeight="420.0" minWidth="600.0" prefHeight="420.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pl.teamjava.hotel.controllers.reservationViewController">
+    <children>
+        <ImageView fitHeight="420.0" fitWidth="600.0" opacity="0.84" pickOnBounds="true">
+            <image>
+                <Image url="@images/managment.jpg" />
+            </image>
+        </ImageView>
+        <Label fx:id="labelManagment" layoutX="255.0" layoutY="14.0" text="Rezerwacje" textFill="#510f0f">
+            <font>
+                <Font name="Times New Roman Bold" size="14.0" />
+            </font>
+            <effect>
+                <Reflection />
+            </effect>
+        </Label>
+        <Label fx:id="labelJavaTeam" layoutX="53.0" layoutY="14.0" text="by JavaTeam" textFill="#837d7d">
+            <font>
+                <Font name="Times New Roman Bold" size="14.0" />
+            </font>
+            <effect>
+                <Reflection />
+            </effect>
+        </Label>
+        <Button fx:id="buttonLogout" blendMode="COLOR_BURN" layoutX="450.0" layoutY="10.0" mnemonicParsing="false" opacity="0.6" prefHeight="40.0" prefWidth="140.0" text="Wyloguj">
+            <font>
+                <Font size="18.0" />
+            </font>
+        </Button>
+      <Button fx:id="buttonBack" layoutX="14.0" layoutY="381.0" mnemonicParsing="false" text="Wróć" />
+      <ListView fx:id="listReservation" layoutX="14.0" layoutY="50.0" opacity="0.6" prefHeight="320.0" prefWidth="200.0" />
+      <Button fx:id="buttonCancel" layoutX="225.0" layoutY="345.0" mnemonicParsing="false" text="Usuń" />
+      <ScrollBar fx:id="scrollReservation" layoutX="200.0" layoutY="50.0" orientation="VERTICAL" prefHeight="320.0" prefWidth="14.0" />
+      <SplitMenuButton fx:id="splitProperty" layoutX="225.0" layoutY="50.0" mnemonicParsing="false" text="Wybierz własność">
+        <items>
+          <MenuItem mnemonicParsing="false" text="Action 1" />
+          <MenuItem mnemonicParsing="false" text="Action 2" />
+        </items>
+      </SplitMenuButton>
+      <Button fx:id="buttonShowProfile" layoutX="225.0" layoutY="314.0" mnemonicParsing="false" text="Wyświetl profil użytkownika" />
+    </children>
+</AnchorPane>

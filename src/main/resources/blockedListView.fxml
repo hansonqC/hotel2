@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane minHeight="420.0" minWidth="600.0" prefHeight="420.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pl.teamjava.hotel.controllers.blockedListViewController">
+    <children>
+        <ImageView fitHeight="420.0" fitWidth="600.0" opacity="0.84" pickOnBounds="true">
+            <image>
+                <Image url="@images/managment.jpg" />
+            </image>
+        </ImageView>
+        <Label fx:id="labelManagment" layoutX="237.0" layoutY="14.0" text="Lista zablokowanych" textFill="#4d1616">
+            <font>
+                <Font name="Times New Roman Bold" size="14.0" />
+            </font>
+            <effect>
+                <Reflection />
+            </effect>
+        </Label>
+        <Label fx:id="labelJavaTeam" layoutX="53.0" layoutY="14.0" text="by JavaTeam" textFill="#757575">
+            <font>
+                <Font name="Times New Roman Bold" size="14.0" />
+            </font>
+            <effect>
+                <Reflection />
+            </effect>
+        </Label>
+        <Button fx:id="buttonLogout" blendMode="COLOR_BURN" layoutX="450.0" layoutY="10.0" mnemonicParsing="false" opacity="0.6" prefHeight="40.0" prefWidth="140.0" text="Wyloguj">
+            <font>
+                <Font size="18.0" />
+            </font>
+        </Button>
+      <ListView fx:id="listBlocked" layoutX="200.0" layoutY="54.0" prefHeight="317.0" prefWidth="199.0" />
+      <Button fx:id="buttonRemove" layoutX="194.0" layoutY="381.0" mnemonicParsing="false" text="Odblokuj zaznaczonego użytkownika" />
+      <Button fx:id="buttonBack" layoutX="14.0" layoutY="381.0" mnemonicParsing="false" text="Wróć" />
+    </children>
+</AnchorPane>
