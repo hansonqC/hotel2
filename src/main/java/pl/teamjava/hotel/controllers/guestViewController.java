@@ -25,7 +25,7 @@ public class guestViewController implements Initializable {
     @FXML
     ListView<String> listHotel,listCamp,listTent;
     @FXML
-    Label labelHotel,labelCamp,labelTent;
+    Label labelNameH,labelNameC,labelNameT,labelCityH,labelCityC,labelCityT,labelRegionH,labelRegionC,labelRegionT,labelFreeRoomsH,labelFreeApartamentsH,labelFreeC,labelFreeT;
     @FXML
     Button buttonReserveH, buttonReserveC, buttonReserveT, buttonWeatherH, buttonWeatherC, buttonWeatherT;
     @FXML
@@ -52,6 +52,7 @@ public class guestViewController implements Initializable {
         //   observableTent = FXCollections.observableList(tentDao.getAllTentsNames());
         //   listTent.setItems(observableTent);
 
+
         //TODO: buttony, labelki
 
         //dołączenie radioButton do grupy
@@ -70,17 +71,55 @@ public class guestViewController implements Initializable {
         buttonReserveH.setOnMouseClicked(s -> tryReserve());
 
         //wyświetlanie informacji o hotelu po kliknięcu na nazwę
-        listHotel.getSelectionModel().selectedItemProperty().addListener(
-                (observable, oldValue, newValue) -> {
-                    showInfo(newValue);
-                }
-        );
+        listHotel.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> {
+            labelNameH.setText(newValue);
+            labelCityH.setText(hotelDao.getCityName(newValue));
+            labelRegionH.setText(hotelDao.getRegionName(newValue));
+            //labelFreeRoomsH.setText();
+            //labelFreeApartaments.setText();
+        });
+
+        //zawężanie wyboru ze względu na checkBoxy
+        cBoxAnimalsH.selectedProperty().addListener((observable, oldValue, newValue) -> {
+            showAnimals();
+        });
+        cBoxAquaPH.selectedProperty().addListener((observable, oldValue, newValue) -> {
+            showAquapark();
+        });
+        cBoxPoolH.selectedProperty().addListener((observable, oldValue, newValue) -> {
+            showPools();
+        });
+        cBoxWellSpaH.selectedProperty().addListener((observable, oldValue, newValue) -> {
+            showSpa();
+        });
+        cBoxWiFiH.selectedProperty().addListener(((observable, oldValue, newValue) -> {
+            showWiFi();
+        }));
     }
 
-    //elo
-    // no siema :D
+    private void showWiFi() {
+        observableHotel = FXCollections.observableList(hotelDao.getWiFiHotels());
+        listHotel.setItems(observableHotel);
+    }
 
-    private void showInfo(String newValue) {
+    private void showSpa() {
+        observableHotel = FXCollections.observableList(hotelDao.getSpaHotels());
+        listHotel.setItems(observableHotel);
+    }
+
+    private void showPools() {
+        observableHotel = FXCollections.observableList(hotelDao.getPoolHotels());
+        listHotel.setItems(observableHotel);
+    }
+
+    private void showAquapark() {
+        observableHotel = FXCollections.observableList(hotelDao.getAquaparkHotels());
+        listHotel.setItems(observableHotel);
+    }
+
+    private void showAnimals() {
+        observableHotel = FXCollections.observableList(hotelDao.getAnimalsHotels());
+        listHotel.setItems(observableHotel  );
     }
 
     private void tryReserve() {
@@ -92,7 +131,6 @@ public class guestViewController implements Initializable {
             e.printStackTrace();
         }
     }
-
 
     private void sortByApartmentPrice() {
         observableHotel = FXCollections.observableList(hotelDao.getCheapApartment());

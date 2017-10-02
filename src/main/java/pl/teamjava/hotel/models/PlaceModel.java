@@ -11,7 +11,7 @@ public class PlaceModel {
     private boolean isThereSpa;
     private boolean canIHaveAPet;
 
-    public PlaceModel(String name, String city, String region, String accessCode, String category, boolean isThereWiFi, boolean isThereSwimmingPool, boolean isThereSpa, boolean canIHaveAPet) {
+    public PlaceModel(String string, String resultSetString, String setString) {
         this.name = name;
         this.city = city;
         this.region = region;
