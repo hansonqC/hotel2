@@ -7,14 +7,13 @@ import javafx.scene.control.Button;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class managmentViewController implements Initializable {
+public class RoomManagmentViewController implements Initializable {
 
     @FXML
-    Button buttonMainPage,buttonProperty, buttonRoom, buttonReservation, buttonBlockedList, buttonEdit;
+    Button buttonAdd, buttonRemove, buttonEdit, buttonLogout, buttonBack;
 
+    @Override
     public void initialize(URL location, ResourceBundle resources) {
-
-
 
     }
 }

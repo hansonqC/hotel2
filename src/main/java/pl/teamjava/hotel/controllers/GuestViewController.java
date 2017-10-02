@@ -20,7 +20,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class guestViewController implements Initializable {
+public class GuestViewController implements Initializable {
 
     @FXML
     ListView<String> listHotel,listCamp,listTent;

@@ -10,19 +10,19 @@ import javafx.scene.control.SplitMenuButton;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class reservationViewController implements Initializable {
+public class DeleteRoomController implements Initializable {
 
     @FXML
-    Button buttonLogout, buttonCancel, buttonShowProfile, buttonBack;
+    SplitMenuButton splitName, splitCity;
 
     @FXML
-    ScrollBar scrollReservation;
+    Button buttonDelete, buttonBack, buttonLogout;
 
     @FXML
-    ListView<String> listReservation;
+    ListView<String> listProperty;
 
     @FXML
-    SplitMenuButton splitProperty;
+    ScrollBar scrollProperty;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {

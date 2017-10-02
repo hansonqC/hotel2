@@ -7,25 +7,22 @@ import javafx.scene.control.*;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class editPropertyController implements Initializable {
+public class EditRoomController implements Initializable {
 
     @FXML
-    SplitMenuButton splitCategory, splitCity;
+    SplitMenuButton splitName, splitCategory, splitCity, splitCapacity;
 
     @FXML
     Button buttonEdit, buttonBack, buttonLogout;
 
     @FXML
-    ListView<String> listProperty;
+    ListView<String> listRoom;
 
     @FXML
-    ScrollBar scrollProperty;
+    ScrollBar scrollRoom;
 
     @FXML
-    TextField textName;
-
-    @FXML
-    CheckBox checkWifi, checkPets, checkPool, checkSpa;
+    TextField textName, textPrice;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {

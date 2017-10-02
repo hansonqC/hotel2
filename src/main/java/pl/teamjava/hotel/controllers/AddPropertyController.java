@@ -3,26 +3,26 @@ package pl.teamjava.hotel.controllers;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
-import javafx.scene.control.ListView;
-import javafx.scene.control.ScrollBar;
+import javafx.scene.control.CheckBox;
 import javafx.scene.control.SplitMenuButton;
+import javafx.scene.control.TextField;
 
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class deletePropertyController implements Initializable {
+public class AddPropertyController implements Initializable {
 
     @FXML
-    SplitMenuButton splitCategory, splitCity;
+    TextField textName, textCity, textRegion;
 
     @FXML
-    Button buttonDelete, buttonBack, buttonLogout;
+    SplitMenuButton splitCategory;
 
     @FXML
-    ListView<String> listProperty;
+    CheckBox checkboxWifi, checkboxPets, checkboxPool, checkboxSpa;
 
     @FXML
-    ScrollBar scrollProperty;
+    Button buttonBack, buttonLogout, buttonAdd;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {

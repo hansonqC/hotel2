@@ -10,7 +10,7 @@ import java.util.ResourceBundle;
 /**
  * Created by lukasz on 2017-10-01.
  */
-public class registerViewController implements Initializable {
+public class RegisterViewController implements Initializable {
     @FXML
     private Hyperlink labelAuthorR;
 
