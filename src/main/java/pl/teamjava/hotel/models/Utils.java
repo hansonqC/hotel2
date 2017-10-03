@@ -1,5 +1,7 @@
 package pl.teamjava.hotel.models;
 
+import javafx.scene.control.Alert;
+
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
@@ -23,5 +25,12 @@ public class Utils {
             e.printStackTrace();
         }
         return null;
+    }
+    public static void createSimpleDialog(String name, String header, String message){
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle(name);
+        alert.setHeaderText(header);
+        alert.setContentText(message);
+        alert.show();
     }
 }
